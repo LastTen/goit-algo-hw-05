@@ -41,7 +41,16 @@ def display_log_counts(counts: dict):
         print(f"{key.ljust(13)} | {value}")
 
 
-display_log_counts(count_logs_by_level(load_logs(sys.argv[1])))
+def main():
+    if len(sys.argv) == 2:
+        display_log_counts(count_logs_by_level(load_logs(sys.argv[1])))
+    if len(sys.argv) == 3:
+        print(filter_logs_by_level(load_logs(sys.argv[1]), sys.argv[2]))
+
+
+if __name__ == "__main__":
+    main()
+
 
 # print(count_logs_by_level(load_logs(sys.argv[1])))
 
