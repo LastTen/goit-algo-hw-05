@@ -31,4 +31,5 @@ def caching_fibonacci():
 
 
 if __name__ == "__main__":
-    print(caching_fibonacci()(0))
+    fibonacci = caching_fibonacci()
+    print(fibonacci(50))
